@@ -35,9 +35,9 @@ export default function ProfilePage(props) {
     }
   }
 
-  async function removeLike(likeId){
+  async function removePost(id){
     try {
-      const data = await likesAPI.removeLike(likeId);
+      const data = await likesAPI.removePost(id);
       console.log(data, '<-  this is the response from the server when we remove a like')
       getProfile()
       
@@ -108,7 +108,7 @@ export default function ProfilePage(props) {
             numPhotosCol={3}
             user={props.user}
             addLike={addLike}
-            removeLike={removeLike}
+            removePost={removePost}
           />
         </Grid.Column>
       </Grid.Row>

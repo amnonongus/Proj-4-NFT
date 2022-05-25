@@ -6,7 +6,8 @@ const s3 = new S3();
 
 module.exports = {
     create,
-    index
+    index,
+    deletePost
 }
 
 function create(req, res){
@@ -51,4 +52,15 @@ async function index(req, res){
     } catch(err){
 
     }
+}
+
+async function deletePost(req, res) {
+    try {
+        const Post = await SunPost.findOneAndDelete({_id: req.params.id, user: req.user._id});
+        console.log(Post, " <-= post in delete!")
+        res.json({data: 'post removed'})
+    } catch(err){
+        res.status(400).json({err})
+    }
+    
 }

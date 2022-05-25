@@ -14,7 +14,7 @@ export function create(postId){
 	})
 }
 
-export function removeLike(likeId){
+export function removePost(likeId){
 	return fetch(`${BASE_URL}/likes/${likeId}`, {
 		method: 'DELETE',
 		headers: {

@@ -119,7 +119,7 @@ export default function Feed({user, handleLogout}) {
       </Grid.Row>
       <Grid.Row style={{ marginTop: 225 }}>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <PostGallery
+          {/* <PostGallery
             posts={posts}
             numPhotosCol={1}
             isProfile={false}
@@ -127,7 +127,7 @@ export default function Feed({user, handleLogout}) {
             addLike={addLike}
             removeLike={removeLike}
             user={user}
-          />
+          /> */}
         </Grid.Column>
       </Grid.Row>
     </Grid>
