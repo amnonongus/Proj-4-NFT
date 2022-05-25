@@ -26,6 +26,12 @@ export default function AddPuppyForm(props){
     const formData = new FormData()
     formData.append('photo', selectedFile)
     formData.append('caption', state.caption)
+    formData.append('name', state.name)
+    formData.append('floorPrice', state.floorPrice)
+    formData.append('volume', state.volume)
+    formData.append('volume24hours', state.volume24hours)
+    formData.append('volume7days', state.volume7days)
+    formData.append('supply', state.supply)
     props.handleAddPost(formData); 
     
     // Have to submit the form now! We need a function!
@@ -49,6 +55,54 @@ export default function AddPuppyForm(props){
                   required
               />   
               <Form.Input
+                  className="form-control"
+                  name="name"
+                  value={state.name}
+                  placeholder="NFT Name"
+                  onChange={handleChange}
+                  required
+              />  
+              <Form.Input
+                  className="form-control"
+                  name="floorPrice"
+                  value={state.floorPrice}
+                  placeholder="Floor Price"
+                  onChange={handleChange}
+                  required
+              />  
+              <Form.Input
+                  className="form-control"
+                  name="volume"
+                  value={state.volume}
+                  placeholder="Volume"
+                  onChange={handleChange}
+                  required
+              />  
+              <Form.Input
+                  className="form-control"
+                  name="volume24hours"
+                  value={state.volume24hours}
+                  placeholder="Volume last 24 hours"
+                  onChange={handleChange}
+                  required
+              />  
+              <Form.Input
+                  className="form-control"
+                  name="volume7days"
+                  value={state.volume7days}
+                  placeholder="Volume last 7 days"
+                  onChange={handleChange}
+                  required
+              />  
+              <Form.Input
+                  className="form-control"
+                  name="supply"
+                  value={state.supply}
+                  placeholder="Supply"
+                  onChange={handleChange}
+                  required
+              />  
+              <Form.Input
                 className="form-control"
                 type="file"
                 name="photo"
@@ -59,7 +113,7 @@ export default function AddPuppyForm(props){
                 type="submit"
                 className="btn"
               >
-                ADD PUPPY
+                ADD NFT
               </Button>
             </Form>
           </Segment>
