@@ -24,30 +24,28 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
   // grey, because the user hasn't liked the post, and the click handler should be addLike
   return (
     <Card key={post._id} raised>
-      {isProfile ? (
-        ""
-      ) : (
-        <Card.Content textAlign="left">
-          <Card.Header>
-            <Link to={`/${post.user.username}`}>
-              <Image
-                size="large"
-                avatar
-                src={
-                  post.user.photoUrl
-                    ? post.user.photoUrl
-                    : "https://react.semantic-ui.com/images/wireframe/square-image.png"
-                }
-              />
-              {post.user.username}
-            </Link>
-          </Card.Header>
-        </Card.Content>
-      )}
 
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
         <Card.Description>{post.caption}</Card.Description>
+      </Card.Content>
+      <Card.Content>
+        <Card.Description>{post.name}</Card.Description>
+      </Card.Content>
+      <Card.Content>
+        <Card.Description>{post.floorPrice}</Card.Description>
+      </Card.Content>
+      <Card.Content>
+        <Card.Description>{post.volume}</Card.Description>
+      </Card.Content>
+      <Card.Content>
+        <Card.Description>{post.volume24hours}</Card.Description>
+      </Card.Content>
+      <Card.Content>
+        <Card.Description>{post.volume7days}</Card.Description>
+      </Card.Content>
+      <Card.Content>
+        <Card.Description>{post.supply}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
         <Icon

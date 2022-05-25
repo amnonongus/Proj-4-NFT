@@ -113,11 +113,11 @@ export default function Feed({user, handleLogout}) {
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
+        <Grid.Column style={{ maxWidth: 450}}>
           <AddPostForm handleAddPost={handleAddPost} />
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
+      <Grid.Row style={{ marginTop: 225 }}>
         <Grid.Column style={{ maxWidth: 450 }}>
           <PostGallery
             posts={posts}

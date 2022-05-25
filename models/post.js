@@ -11,12 +11,12 @@ const nftSchema = new mongoose.Schema({
     photoUrl: String,
     caption: String,
     name: String,
-    FloorPrice: Number,
-    Volume: Number,
-    Volume24hours: Number,
-    Volume7days: Number,
-    UniqueOwners: Number,
-    Supply: Number,
+    floorPrice: Number,
+    volume: Number,
+    volume24hours: Number,
+    volume7days: Number,
+    uniqueOwners: Number,
+    supply: Number,
     likes: [likesSchema] // embedded schema
   })
  

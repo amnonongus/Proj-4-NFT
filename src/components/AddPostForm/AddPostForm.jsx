@@ -5,7 +5,13 @@ import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 export default function AddPuppyForm(props){
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
-    caption: ''
+    name: '',
+    floorPrice: '',
+    volume: '',
+    volume24hours: '',
+    volume7days: '',
+    supply: '',
+
   })
 
   function handleFileInput(e){
@@ -25,7 +31,6 @@ export default function AddPuppyForm(props){
              
     const formData = new FormData()
     formData.append('photo', selectedFile)
-    formData.append('caption', state.caption)
     formData.append('name', state.name)
     formData.append('floorPrice', state.floorPrice)
     formData.append('volume', state.volume)
@@ -45,15 +50,7 @@ export default function AddPuppyForm(props){
         <Segment>
         
             <Form  autoComplete="off" onSubmit={handleSubmit}>
-            
-              <Form.Input
-                  className="form-control"
-                  name="caption"
-                  value={state.caption}
-                  placeholder="What's on your pups mind?"
-                  onChange={handleChange}
-                  required
-              />   
+           
               <Form.Input
                   className="form-control"
                   name="name"
