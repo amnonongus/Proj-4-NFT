@@ -4,52 +4,13 @@ import { Card, Icon, Image, Divider, Menu, Table, Label } from "semantic-ui-reac
 import { Link } from "react-router-dom";
 
 function PostCard({ post, isProfile, removePost, addLike, user }) {
-  const likeIndex = post.likes.findIndex(
-    (like) => like.username === user.username
-  );
 
   const clickHandler = () => {
     console.log('clickHandler')
     removePost(post._id);
   }
-  const likeColor = likeIndex > -1 ? "red" : "grey";
-
  
   return (
-    // <Card key={post._id} raised>
-
-    //   <Image src={`${post.photoUrl}`} wrapped ui={false} />
-    //   <Card.Content>
-    //     <Card.Description>{post.caption}</Card.Description>
-    //   </Card.Content>
-    //   <Card.Content>
-    //     <Card.Description>Name: {post.name}</Card.Description>
-    //   </Card.Content>
-    //   <Card.Content>
-    //     <Card.Description>Floor Price: {post.floorPrice}</Card.Description>
-    //   </Card.Content>
-    //   <Card.Content>
-    //     <Card.Description>Volume: {post.volume}</Card.Description>
-    //   </Card.Content>
-    //   <Card.Content>
-    //     <Card.Description>Last 24 hours: {post.volume24hours}</Card.Description>
-    //   </Card.Content>
-    //   <Card.Content>
-    //     <Card.Description>Last 7 days: {post.volume7days}</Card.Description>
-    //   </Card.Content>
-    //   <Card.Content>
-    //     <Card.Description>Supply: {post.supply}</Card.Description>
-    //   </Card.Content>
-    //   <Card.Content extra textAlign={"right"}>
-    //     <Icon
-    //       name={"delete"}
-    //       size="large"
-    //       color={likeColor}
-    //       onClick={clickHandler} 
-    //     />
-    //   </Card.Content>
-    // </Card>
-
     <>
   <Table celled>
     <Table.Header>

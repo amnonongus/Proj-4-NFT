@@ -31,7 +31,6 @@ function create(req, res){
             })
                 
             console.log(post)
-			// make sure the post we're sending back has the user populated
 			await post.populate('user');
 		
             res.status(201).json({post: post})
