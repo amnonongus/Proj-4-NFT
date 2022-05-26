@@ -6,7 +6,6 @@ const favicon = require('serve-favicon');
 
 require('./config/database');
 
-// Require controllers here
 
 const app = express();
 

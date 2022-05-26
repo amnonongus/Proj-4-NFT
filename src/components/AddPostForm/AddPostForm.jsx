@@ -10,6 +10,7 @@ export default function AddPuppyForm(props){
     volume: '',
     volume24hours: '',
     volume7days: '',
+    uniqueOwners: '',
     supply: '',
 
   })

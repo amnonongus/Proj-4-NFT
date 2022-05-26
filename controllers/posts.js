@@ -57,10 +57,12 @@ async function index(req, res){
 
 async function deletePost(req, res) {
     try {
-        const Post = await Post.findOneAndDelete({_id: req.params.id, user: req.user._id});
+        console.log(req.params)
+        const post = await Post.findOneAndDelete({_id: req.params.id, user: req.user._id});
         console.log(Post, " <-= post in delete!")
         res.json({data: 'post removed'})
     } catch(err){
+        console.log(err)
         res.status(400).json({err})
     }
     
