@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
+import "./ProfilePage.css";
 import PageHeader from "../../components/Header/Header";
 import Loading from "../../components/Loader/Loader";
 import ProfileBio from "../../components/ProfileBio/ProfileBio";
