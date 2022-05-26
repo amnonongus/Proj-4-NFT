@@ -40,7 +40,6 @@ function PostCard({ post, isProfile, removePost, addLike, user }) {
       <Icon
           name={"delete"}
           size="large"
-          color={likeColor}
           onClick={clickHandler} 
         />
     </Table.Body>
