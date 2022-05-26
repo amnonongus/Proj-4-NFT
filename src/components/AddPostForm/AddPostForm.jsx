@@ -36,6 +36,7 @@ export default function AddPuppyForm(props){
     formData.append('volume', state.volume)
     formData.append('volume24hours', state.volume24hours)
     formData.append('volume7days', state.volume7days)
+    formData.append('uniqueOwners', state.uniqueOwners)
     formData.append('supply', state.supply)
     props.handleAddPost(formData); 
     
@@ -88,6 +89,14 @@ export default function AddPuppyForm(props){
                   name="volume7days"
                   value={state.volume7days}
                   placeholder="Volume last 7 days"
+                  onChange={handleChange}
+                  required
+              />  
+               <Form.Input
+                  className="form-control"
+                  name="uniqueOwners"
+                  value={state.uniqueOwners}
+                  placeholder="Unique Owners"
                   onChange={handleChange}
                   required
               />  

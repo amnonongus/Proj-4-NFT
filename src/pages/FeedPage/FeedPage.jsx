@@ -33,23 +33,9 @@ export default function Feed({user, handleLogout}) {
     }
   }
 
-  async function removePost(likeId){
-    try {
-      const data = await likeAPI.removePost(likeId);
-      console.log(data, '<-  this is the response from the server when we remove a like')
-      getPosts()
-      
-    } catch(err){
-      console.log(err);
-      setError(err.message);
-    }
-  }
 
 
 
-  // C create in Crud
-  // we invoke this function in addPost component when the submit button on our form is clicked
-  // so we need to pass it as a prop
   async function handleAddPost(post) {
     try {
       setLoading(true);

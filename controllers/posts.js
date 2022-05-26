@@ -22,9 +22,11 @@ function create(req, res){
                 user: req.user,
                 photoUrl: data.Location,
                 name: req.body.name,
+                floorPrice: req.body.floorPrice,
                 volume: req.body.volume,
                 volume24hours: req.body.volume24hours,
                 volume7days: req.body.volume7days,
+                uniqueOwners: req.body.uniqueOwners,
                 supply: req.body.supply
             })
                 

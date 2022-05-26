@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Image, Divider, Header, Table, Segment } from "semantic-ui-react";
+import { Card, Icon, Image, Divider, Menu, Table, Label } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 function PostCard({ post, isProfile, removePost, addLike, user }) {
@@ -50,47 +50,39 @@ function PostCard({ post, isProfile, removePost, addLike, user }) {
     // </Card>
 
     <>
-    <Segment inverted>
-    <Divider horizontal>
-      <Header as='h4'>
-        <Icon name='tag' />
-        Description
-      </Header>
-    </Divider>
+  <Table celled>
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Name</Table.HeaderCell>
+        <Table.HeaderCell>Floor Price</Table.HeaderCell>
+        <Table.HeaderCell>Volume</Table.HeaderCell>
+        <Table.HeaderCell>Volume 24 hours</Table.HeaderCell>
+        <Table.HeaderCell>Volume 7 days</Table.HeaderCell>
+        <Table.HeaderCell>Unique Owners</Table.HeaderCell>
+        <Table.HeaderCell>Supply</Table.HeaderCell>
+      </Table.Row>
+    </Table.Header>
 
-    <p>
-      Doggie treats are good for all times of the year. Proven to be eaten by
-      99.9% of all dogs worldwide.
-    </p>
-
-    <Divider horizontal>
-      <Header as='h4'>
-        <Icon name='bar chart' />
-        Specifications
-      </Header>
-    </Divider>
-
-    <Table definition>
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell width={2}>Size</Table.Cell>
-          <Table.Cell>1" x 2"</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Weight</Table.Cell>
-          <Table.Cell>6 ounces</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Color</Table.Cell>
-          <Table.Cell>Yellowish</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Odor</Table.Cell>
-          <Table.Cell>Not Much Usually</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-    </Segment>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>
+          <Label ribbon>{post.name}</Label>
+        </Table.Cell>
+        <Table.Cell>{post.floorPrice}</Table.Cell>
+        <Table.Cell>{post.volume}</Table.Cell>
+        <Table.Cell>{post.volume24hours}</Table.Cell>
+        <Table.Cell>{post.volume7days}</Table.Cell>
+        <Table.Cell>{post.uniqueOwners}</Table.Cell>
+        <Table.Cell>{post.supply}</Table.Cell>
+      </Table.Row>
+      <Icon
+          name={"delete"}
+          size="large"
+          color={likeColor}
+          onClick={clickHandler} 
+        />
+    </Table.Body>
+  </Table>
   </>
 
 
