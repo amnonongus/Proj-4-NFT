@@ -40,7 +40,6 @@ export default function AddPuppyForm(props){
     formData.append('supply', state.supply)
     props.handleAddPost(formData); 
     
-    // Have to submit the form now! We need a function!
   }
 
 

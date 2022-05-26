@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Header.css';
 import { Header, Segment, Image, Icon } from "semantic-ui-react";
 
 export default function PageHeader({ user, handleLogout }) {
@@ -7,6 +8,7 @@ export default function PageHeader({ user, handleLogout }) {
   return (
     <Segment clearing>
       <Header as="h2" floated="right">
+      <Link className="Link" to="/">New NFT</Link>
         <Link to="/">
           <Icon name="home"></Icon>
         </Link>
