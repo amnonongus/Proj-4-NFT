@@ -4,10 +4,12 @@ import PageHeader from "../../components/Header/Header";
 import Loading from "../../components/Loader/Loader";
 import ProfileBio from "../../components/ProfileBio/ProfileBio";
 import PostGallery from "../../components/PostGallery/PostGallery";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage"
+import { Link } from "react-router-dom";
 
 import userService from "../../utils/userService";
-import * as likesAPI from '../../utils/likeApi';
+import * as postAPI from '../../utils/postApi';
+import * as likeAPI from '../../utils/likeApi';
 
 import { useParams } from "react-router-dom";
 
@@ -26,7 +28,7 @@ export default function ProfilePage(props) {
 
   async function addLike(postId){
     try {
-      const data = await likesAPI.create(postId)
+      const data = await likeAPI.create(postId)
       console.log(data, ' <- the response from the server when we make a like');
       getProfile(); // <- to go get the updated posts with the like
     } catch(err){
@@ -37,7 +39,7 @@ export default function ProfilePage(props) {
 
   async function removePost(id){
     try {
-      const data = await likesAPI.removePost(id);
+      const data = await postAPI.removePost(id);
       console.log(data, '<-  this is the response from the server when we remove a like')
       getProfile()
       
@@ -105,7 +107,7 @@ export default function ProfilePage(props) {
         <PostGallery
             isProfile={true}
             posts={posts}
-            numPhotosCol={3}
+            numPhotosCol={1}
             user={props.user}
             addLike={addLike}
             removePost={removePost}

@@ -50,8 +50,8 @@ export default function LoginPage(props) {
        
         verticalAlign="middle"
       >
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="teal" textAlign="center">
+        <Grid.Column style={{ maxWidth: 450, marginTop: 300} }>
+          <Header as="h2" color="black" textAlign="center">
             <Image src="https://i.imgur.com/XtGI2WU_d.jpg?maxwidth=520&shape=thumb&fidelity=high" /> Log-in to your
             account
           </Header>
@@ -74,7 +74,7 @@ export default function LoginPage(props) {
                 required
               />
               <Button
-                color="teal"
+                color="black"
                 fluid
                 size="large"
                 type="submit"

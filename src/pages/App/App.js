@@ -20,7 +20,7 @@ function App() {
     setUser(null);
   }
 
-  if(user) { // are we logged in?
+  if(user) { 
     return (
     <Routes>
       <Route

@@ -14,8 +14,8 @@ export function create(postId){
 	})
 }
 
-export function removePost(likeId){
-	return fetch(`${BASE_URL}/likes/${likeId}`, {
+export function removePost(id){
+	return fetch(`${BASE_URL}/likes/${id}`, {
 		method: 'DELETE',
 		headers: {
 			'Authorization': 'Bearer ' + tokenService.getToken()

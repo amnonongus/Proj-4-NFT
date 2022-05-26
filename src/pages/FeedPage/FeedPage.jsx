@@ -6,7 +6,7 @@ import PostGallery from "../../components/PostGallery/PostGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
 import * as postsAPI from "../../utils/postApi";
-import * as likesAPI from '../../utils/likeApi';
+import * as likeAPI from '../../utils/likeApi';
 
 
 
@@ -24,7 +24,7 @@ export default function Feed({user, handleLogout}) {
 
   async function addLike(postId){
     try {
-      const data = await likesAPI.create(postId)
+      const data = await likeAPI.create(postId)
       console.log(data, ' <- the response from the server when we make a like');
       getPosts(); // <- to go get the updated posts with the like
     } catch(err){
@@ -33,9 +33,9 @@ export default function Feed({user, handleLogout}) {
     }
   }
 
-  async function removeLike(likeId){
+  async function removePost(likeId){
     try {
-      const data = await likesAPI.removeLike(likeId);
+      const data = await likeAPI.removePost(likeId);
       console.log(data, '<-  this is the response from the server when we remove a like')
       getPosts()
       

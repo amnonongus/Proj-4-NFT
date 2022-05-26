@@ -1,62 +1,99 @@
 import React from "react";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Divider, Header, Table, Segment } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-function PostCard({ post, isProfile, removeLike, addLike, user }) {
-  // call the addLike or the removeLike when we click on the heart!
 
-  // We need to know if the logged in user has liked this particular post!
-  // we search the array of objects that is post.likes to see if the logged in users
-  // id exists in that array of objects
+function PostCard({ post, isProfile, removePost, addLike, user }) {
   const likeIndex = post.likes.findIndex(
     (like) => like.username === user.username
   );
 
-  const clickHandler =
-    likeIndex > -1
-      ? () => removeLike(post.likes[likeIndex]._id)
-      : () => addLike(post._id);
-
-  // if the logged users id exists, the heart should be red, because the logged in user has liked the post
-  // and the clicked handler should removeLike
+  const clickHandler = () => {
+    console.log('clickHandler')
+    removePost(post._id);
+  }
   const likeColor = likeIndex > -1 ? "red" : "grey";
 
-  // if the logged users id doesn't exist in the post.likes array, then the heart should be
-  // grey, because the user hasn't liked the post, and the click handler should be addLike
+ 
   return (
-    <Card key={post._id} raised>
+    // <Card key={post._id} raised>
 
-      <Image src={`${post.photoUrl}`} wrapped ui={false} />
-      <Card.Content>
-        <Card.Description>{post.caption}</Card.Description>
-      </Card.Content>
-      <Card.Content>
-        <Card.Description>{post.name}</Card.Description>
-      </Card.Content>
-      <Card.Content>
-        <Card.Description>{post.floorPrice}</Card.Description>
-      </Card.Content>
-      <Card.Content>
-        <Card.Description>{post.volume}</Card.Description>
-      </Card.Content>
-      <Card.Content>
-        <Card.Description>{post.volume24hours}</Card.Description>
-      </Card.Content>
-      <Card.Content>
-        <Card.Description>{post.volume7days}</Card.Description>
-      </Card.Content>
-      <Card.Content>
-        <Card.Description>{post.supply}</Card.Description>
-      </Card.Content>
-      <Card.Content extra textAlign={"right"}>
-        <Icon
-          name={"heart"}
-          size="large"
-          color={likeColor}
-          onClick={clickHandler}
-        />
-        {post.likes.length} Likes
-      </Card.Content>
-    </Card>
+    //   <Image src={`${post.photoUrl}`} wrapped ui={false} />
+    //   <Card.Content>
+    //     <Card.Description>{post.caption}</Card.Description>
+    //   </Card.Content>
+    //   <Card.Content>
+    //     <Card.Description>Name: {post.name}</Card.Description>
+    //   </Card.Content>
+    //   <Card.Content>
+    //     <Card.Description>Floor Price: {post.floorPrice}</Card.Description>
+    //   </Card.Content>
+    //   <Card.Content>
+    //     <Card.Description>Volume: {post.volume}</Card.Description>
+    //   </Card.Content>
+    //   <Card.Content>
+    //     <Card.Description>Last 24 hours: {post.volume24hours}</Card.Description>
+    //   </Card.Content>
+    //   <Card.Content>
+    //     <Card.Description>Last 7 days: {post.volume7days}</Card.Description>
+    //   </Card.Content>
+    //   <Card.Content>
+    //     <Card.Description>Supply: {post.supply}</Card.Description>
+    //   </Card.Content>
+    //   <Card.Content extra textAlign={"right"}>
+    //     <Icon
+    //       name={"delete"}
+    //       size="large"
+    //       color={likeColor}
+    //       onClick={clickHandler} 
+    //     />
+    //   </Card.Content>
+    // </Card>
+
+    <>
+    <Segment inverted>
+    <Divider horizontal>
+      <Header as='h4'>
+        <Icon name='tag' />
+        Description
+      </Header>
+    </Divider>
+
+    <p>
+      Doggie treats are good for all times of the year. Proven to be eaten by
+      99.9% of all dogs worldwide.
+    </p>
+
+    <Divider horizontal>
+      <Header as='h4'>
+        <Icon name='bar chart' />
+        Specifications
+      </Header>
+    </Divider>
+
+    <Table definition>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell width={2}>Size</Table.Cell>
+          <Table.Cell>1" x 2"</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Weight</Table.Cell>
+          <Table.Cell>6 ounces</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Color</Table.Cell>
+          <Table.Cell>Yellowish</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Odor</Table.Cell>
+          <Table.Cell>Not Much Usually</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+    </Segment>
+  </>
+
+
   );
 }
 

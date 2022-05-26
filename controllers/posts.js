@@ -56,7 +56,7 @@ async function index(req, res){
 
 async function deletePost(req, res) {
     try {
-        const Post = await SunPost.findOneAndDelete({_id: req.params.id, user: req.user._id});
+        const Post = await Post.findOneAndDelete({_id: req.params.id, user: req.user._id});
         console.log(Post, " <-= post in delete!")
         res.json({data: 'post removed'})
     } catch(err){
