@@ -5,9 +5,9 @@ const likesSchema = mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId }
 })
 
-// A post has many likes, a like belongs to a POST
+
 const nftSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}, // referencing a model
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}, 
     photoUrl: String,
     caption: String,
     name: String,
@@ -17,7 +17,7 @@ const nftSchema = new mongoose.Schema({
     volume7days: Number,
     uniqueOwners: Number,
     supply: Number,
-    likes: [likesSchema] // embedded schema
+    likes: [likesSchema] 
   })
  
 
