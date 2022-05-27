@@ -49,8 +49,9 @@ export default function LoginPage(props) {
         textAlign="center"
        
         verticalAlign="middle"
-      >
+      > 
         <Grid.Column style={{ maxWidth: 450, marginTop: 300} }>
+        <h1>NFT Tracker</h1>
           <Header as="h2" color="black" textAlign="center">
             <Image src="https://i.imgur.com/XtGI2WU_d.jpg?maxwidth=520&shape=thumb&fidelity=high" /> Log-in to your
             account

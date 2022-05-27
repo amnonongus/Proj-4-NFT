@@ -20,7 +20,7 @@ function create(req, res){
             const post = await Post.create({
                 caption: req.body.caption,
                 user: req.user,
-                // photoUrl: data.Location,
+                photoUrl: data.Location,
                 name: req.body.name,
                 floorPrice: req.body.floorPrice,
                 volume: req.body.volume,
